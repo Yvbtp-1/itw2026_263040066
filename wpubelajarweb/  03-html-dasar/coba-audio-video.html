@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coba Rich media tags</title>
+  </head>
+  <body>
+    <h3>Audio</h3>
+    <audio controls>
+      <source src="audio.mp3" type="audio/mpeg" />
+      <!-- Ini Latihan coding saja karna audio dan youtube tidak seperti foto bisa ambil dari website 
+       kalo audio dan video hanya ada di laptop saya itu kalo di ekspor coding nya ke orang lain akan hilang audio dan video nya -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <h3>Video Manis</h3>
+    <!---Kalo Youtube itu pake i frame bukan video tag--->
+    <iframe
+      src="https://www.youtube.com/embed/QDia3e12czc"
+      title="YouTube video player"
+      frameborder="0"
+      allow="
+        accelerometer;
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+      "
+      allowfullscreen
+      poster="https://i.pinimg.com/1200x/53/28/b8/5328b888fae8f61eb814730f360ad114.jpg"
+      width="320"
+      height="240"
+    >
+      >
+      <source
+        src="https://youtu.be/QDia3e12czc?si=7hqbjZGbF0wdmAmU"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </iframe>
+    <br />
+    <video
+      controls
+      poster="https://i.pinimg.com/1200x/53/28/b8/5328b888fae8f61eb814730f360ad114.jpg"
+      width="320"
+    >
+      <source
+        src="https://youtu.be/QDia3e12czc?si=7hqbjZGbF0wdmAmU"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+  </body>
+</html>
