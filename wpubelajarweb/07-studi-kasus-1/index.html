@@ -4,6 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WPU StreamFest 2026 - Neon Nights Music Festival</title>
+    <style>
+      .ticket-form label {
+        display: inline-block;
+        width: 110px;
+      }
+
+      .ticket-form div {
+        margin-bottom: 8px;
+      }
+
+      .ticket-options {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .ticket-options label {
+        width: auto;
+      }
+    </style>
   </head>
   <body>
     <!-- 1.HEADER & NAVIGATION -->
@@ -15,7 +35,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#lineup">lineup</a></li>
           <li><a href="#schedule">schedule</a></li>
-          <li><a href="#tikets">tikets</a></li>
+          <li><a href="#tickets">tickets</a></li>
           <li><a href="#gallery">gallery</a></li>
         </ul>
       </nav>
@@ -28,7 +48,7 @@
         <h2>Neon Night Music Festival 2026</h2>
         <h4>3 Days. 6 Indonesian Artists. Infinite Vibes.</h4>
         <p>June 15-17, 2026 | Jakarta International Expo.</p>
-        <a href="Tickets">Get Tickets</a>
+        <a href="#tickets">Get Tickets</a>
       </section>
       <hr />
 
@@ -221,6 +241,85 @@
           </tbody>
         </table>
       </section>
+
+      <hr />
+      <!--2.5.TIKET SECCTION-->
+      <h3>GET YOUR TICKETS</h3>
+      <form id="tickets" class="ticket-form">
+        <div>
+          <label for="fullname">Full Name</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            required
+            autofocus
+            autocomplete="name"
+          />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            inputmode="email"
+            required
+          />
+        </div>
+        <div>
+          <label for="phone">No telepon</label>
+          <input type="text" id="phone" name="phone" inputmode="tel" required />
+        </div>
+
+        <div>
+          <h5>Ticket Type</h5>
+          <div class="ticket-options">
+            <input
+              type="radio"
+              id="reguler"
+              name="ticket_type"
+              value="reguler"
+              checked
+            />
+            <label for="reguler">Reguler (Rp 500.000)</label>
+
+            <input type="radio" id="vip" name="ticket_type" value="vip" />
+            <label for="vip">VIP (Rp 1.500.000)</label>
+
+            <input type="radio" id="vvip" name="ticket_type" value="vvip" />
+            <label for="vvip">VVIP (Rp 3.000.000)</label>
+          </div>
+        </div>
+
+        <div>
+          <label for="quantity">Quantity</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+            max="10"
+            value="1"
+          />
+        </div>
+
+        <div>
+          <h5>Day Pass</h5>
+          <div class="ticket-options">
+            <input type="checkbox" id="day1" name="day_pass" value="day1" />
+            <label for="day1">Day 1 (June 15)</label>
+
+            <input type="checkbox" id="day2" name="day_pass" value="day2" />
+            <label for="day2">Day 2 (June 16)</label>
+
+            <input type="checkbox" id="day3" name="day_pass" value="day3" />
+            <label for="day3">Day 3 (June 17)</label>
+            
+          </div>
+        </div>
+      </form>
+      <
     </main>
   </body>
 </html>
