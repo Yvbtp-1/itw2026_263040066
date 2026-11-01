@@ -1,0 +1,96 @@
+<!-- Font Styling 2
+ font-size
+
+ px {Pixels}
+ % {Percentage}
+ em {Font Size Multiplier 1 em = 16px, so 2 em = 32px}
+ em = 16px default font size in most browsers
+ 2 em = 16 x 2 = 32px
+ rem {Root em, 1 rem = 16px, so 2 rem = 32px}
+
+line-height
+
+normal
+px
+em
+
+font-weight
+
+lighter
+normal
+100-900
+bold
+bolder
+
+font-style
+
+normal 
+italic 
+
+Kalo italic itu dia memiringkan sebuah huruf tetapi 
+mengubah font juga menjadi kata sambung dan hurufnya menjadi miring
+
+oblique
+kalo oblique itu dia tidak mengubah font 
+tetapi memaksa font untuk miring menjadi kurang jelas dan bagus
+karna sebuah font yang kurang untuk di miringkan dia memaksa font tersebut untuk miring
+
+font shorthand
+body{
+  font-style: italic;          atau reguler  
+  font-weight: bold;           atau reguler
+  font-size: 16px;             ukuran nya berapa
+  line-height: 2;              jarak antar baris nya berapa
+  font-family: cursive;
+}
+
+menjadi 
+body{
+  font: italic small-caps bold 16px/18px helvetica,arial,sans-serif;
+}
+
+body{
+  font: font-style font-variant font-weight font-size/line-height font-family;
+}
+
+
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coba Font Styling</title>
+    <style>
+
+      /* p {
+        font-style: italic;
+        font-variant: small-caps;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 18px;
+        font-family: helvetica, arial, sans-serif;
+      } */
+      p {
+        font: italic small-caps bold 16px/18px helvetica, arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello world</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quaerat
+      incidunt quia voluptate debitis similique quibusdam, rerum quam eum fugiat
+      delectus nam eaque magnam asperiores natus consequuntur neque voluptatem
+      fuga amet, recusandae exercitationem ad suscipit! Architecto consequatur
+      laborum quo ipsum unde adipisci, numquam eaque doloribus corporis
+      explicabo fugit veniam. Consectetur vel sequi minus esse. Blanditiis
+      facilis minus dicta consectetur iste explicabo modi laborum voluptatem
+      porro voluptas. Nisi repudiandae voluptatibus perspiciatis ea ab est,
+      assumenda, unde quod, impedit reprehenderit quo eaque enim ad dolores
+      iusto. Nisi iste vel aliquid unde cupiditate delectus, rerum aperiam sequi
+      animi, tempora voluptate sit, quis eveniet.
+    </p>
+  </body>
+</html>
