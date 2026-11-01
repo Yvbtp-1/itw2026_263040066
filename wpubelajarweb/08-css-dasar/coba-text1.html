@@ -28,6 +28,10 @@
     text-decoration-skip-ink
 
     text-transform  Mengubah teks menjadi huruf besar, kecil, atau kapital.
+    none
+    lowercase (Semua huruf menjadi huruf kecil)
+    uppercase(Semua huruf menjadi huruf besar)
+    capitalize (Huruf pertama setiap kata menjadi kapital)
 
     Contoh:
     p {
@@ -39,9 +43,15 @@
   2. TEXT SPACING
 
     text-indent    Mengatur indentasi baris pertama paragraf.
+    px,%,em,rem
     letter-spacing Mengatur jarak antarhuruf.
+    normal,px,em,rem
     word-spacing   Mengatur jarak antarkata.
+    normal,px,em,rem
     white-space    Mengatur cara browser menampilkan spasi dan baris baru.
+    normal
+    wrap
+    nowrap
 
   3. TEXT EFFECTS
 
@@ -49,3 +59,54 @@
       Biasanya digunakan bersama overflow dan white-space.
     text-shadow   Memberikan efek bayangan pada teks.
 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coba Text - Decoration & Transformation</title>
+</head>
+<style>
+    h1 {
+        font-size: 40px;
+        text-align: center;
+        text-transform: uppercase ;
+        text-decoration: underline overline;
+        text-decoration-style: wavy ;
+        text-decoration-color: navy ;
+        text-decoration-skip-ink: none ;
+    }
+
+    h2 {
+        font-size: 30px;
+        text-align: right;
+        color: blue;
+    }
+    
+    p{
+        font-size: 26px;
+        font-family: Arial, Helvetica, sans-serif;
+        tezt-align: justify;
+        color: red;
+    }
+</style>
+<body>
+    <h1>Hello,CSS</h1>
+    <h2>Belajar Web di WPUCourse.id</h2>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.
+      Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec
+      luctus felis sollicitudin mauris. Integer in mauris eu nibh euismod
+      gravida.
+    </p>
+</body>
+</html>
