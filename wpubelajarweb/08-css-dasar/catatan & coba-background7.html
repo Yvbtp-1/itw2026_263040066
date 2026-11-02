@@ -1,0 +1,53 @@
+<!-- MUTIPLE BACKGROUND
+ background-image:
+url("gambar1.png"),
+url("gambar2.svg"),
+linear-gradient(hsl(191deg, 40%, 86%), hsla(191deg, 96%, 96%, 0.5));
+
+background-size:
+contain, cover, auto;
+background-repeat: no-repeat, no-repeat, no-repeat;
+background-position: 50% 50%, 10% 50%, 0% 0%;
+background-origin: padding-box, border-box, content-box; -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutiple Background</title>\
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Tiny5+Duo:ital,wght@0,100..900;1,100..900&display=swap");
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #333;
+            
+        }
+        .frame {
+            width: 400px;
+            height: 400px;
+            border: 10px solid white;
+            margin: auto;
+            background-image: url(A\ MI\ MIR\ putih\ berbingkai\ hitam.png),url(Tujuh\ Z\ Tidur\ Berjenjang.png),url(My\ Binih.jpg);
+            background-size: 320px;
+            background-repeat: no-repeat,no-repeat,no-repeat;
+            background-position: bottom,top,bottom;
+            background-color: lightblue;
+            border-radius: 30%;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            font-family: 'Tiny5 Duo', Courier, monospace;
+            font-size: 40px ;
+            text-shadow: 2px 2px 4px black;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Bini Gweh</h1>
+    <div class="frame"></div>
+</body>
+</html>
