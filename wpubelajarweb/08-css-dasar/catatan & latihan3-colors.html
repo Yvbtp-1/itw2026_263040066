@@ -19,3 +19,89 @@ CSS Color
   Oklab & OkLCh oklab(59% 0.1 0.1), oklch (60% 0.15 50 / 0.5)
 -->
 
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kutipan Filsuf - Styling Teks</title>
+    <style>
+      html {
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0;
+        padding: 40px;
+        box-sizing: border-box;
+        min-height: 100vh;
+        min-height: 100dvh;
+        background: linear-gradient(
+          135deg,
+          #e0f2fe 0%,
+          #bfdbfe 50%,
+          #c7d2fe 100%
+        );
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        color: black;
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.7;
+      }
+
+      h1 {
+        text-align: center;
+        text-decoration: underline;
+      }
+
+      p {
+        text-align: center;
+        font-size: 1.5rem;
+        font-style: italic;
+        line-height: 1.8;
+        white-space: normal;
+      }
+
+      .highlight {
+        color: #991b1b;
+        text-decoration-color: navy;
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 6px;
+      }
+
+      .quote-kedua {
+        line-height: 2.5;
+        letter-spacing: 12px;
+      }
+
+      .Qute-2 {
+        color: #991b1b;
+        text-decoration-line: line-through;
+      }
+
+      cite {
+        display: block;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quote Filsuf 🏛️</h1>
+
+    <p>
+      “Kebahagiaan hidupmu bergantung pada kualitas
+      <span class="highlight"><strong>pikiranmu</strong></span>.”
+    </p>
+    <cite><strong>— Marcus Aurelius</strong></cite>
+
+    <p class="quote-kedua">
+      “Bukan karena kita memiliki sedikit
+      <span class="Qute-2"><strong>waktu</strong></span>, tetapi karena kita
+      kehilangan banyak <span class="Qute-2"><strong>waktu</strong></span>.”
+    </p>
+    <cite><strong>— Seneca</strong></cite>
+  </body>
+</html>
