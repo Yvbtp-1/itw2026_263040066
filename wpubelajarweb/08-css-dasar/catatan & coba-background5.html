@@ -1,0 +1,38 @@
+<!-- Background
+Background size
+unit ( px,%,em...)
+Mengubah ukuran gambar background
+Background attachment
+Mengunci gambar background agar tetap diam saat halaman di-scroll.
+Multiple backgrounds
+Menumpuk lebih dari satu gambar background pada elemen yang sama -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coba Background </title>
+    <style>
+        body {
+            background-color: lightblue;
+            background-image: url(Gambar\ 1\ \(1\).jpg);
+        }
+
+    .kotak {
+        width: 200px;
+        height: 200px;
+        background-color: salmon;
+        background-image: url(Gambar\ 1\ \(2\).jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="kotak"></div>
+</body>
+</html>
