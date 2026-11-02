@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kutipan Filsuf - Styling Teks</title>
+    <style>
+      body {
+        background-color: white;
+        color: black;
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.7;
+        margin: 40px;
+      }
+
+      h1 {
+        text-align: center;
+        text-decoration: underline;
+      }
+
+      p {
+        text-align: center;
+        overflow: hidden;
+        font-size: 1.5rem;
+        font-style: italic;
+        line-height: 1.8;
+        text-overflow: ellipsis;
+        text-shadow: 2px 3px 4px lightsteelblue;
+        white-space: nowrap;
+      }
+
+      .highlight {
+        text-decoration-color: navy;
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 6px;
+      }
+
+      .quote-kedua {
+        line-height: 2.5;
+        letter-spacing: 12px;
+        text-decoration: line-through;
+        white-space: normal;
+      }
+
+      cite {
+        display: block;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Qoute Filsuf</h1>
+    <p
+    >
+      “Kebahagiaan hidupmu bergantung pada kualitas
+      <span class="highlight">pikiranmu</span>.”
+    </p>
+    <cite>— Marcus Aurelius</cite>
+
+    <p class="quote-kedua">
+      “Bukan karena kita memiliki sedikit waktu, tetapi karena kita kehilangan
+      banyak waktu.”
+    </p>
+    <cite>— Seneca</cite>
+  </body>
+</html>
