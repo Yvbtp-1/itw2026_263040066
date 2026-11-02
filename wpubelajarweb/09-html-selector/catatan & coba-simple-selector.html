@@ -1,0 +1,160 @@
+<!--
+Simple Selectors
+
+• Universal Selectors  
+• Type Selectors  
+• ID Selector  
+• Class Selector  
+• Grouping Selector  
+• Attribute Selector
+
+Universal Selectors (*)
+
+Dikenal sebagai wildcard, digunakan untuk menyeleksi seluruh elemen HTML
+
+```css
+* {
+  color: rebeccapurple;
+}
+```
+
+Type Selectors (`<tag>`)
+
+Menyeleksi semua elemen berdasarkan nama tag HTML-nya (seperti h1, p, div)
+
+```css
+p {
+  font-size: 16px;
+}
+```
+
+Type Selectors (`<tag>`)
+
+Menyeleksi semua elemen berdasarkan nama tag HTML-nya (seperti h1, p, div)
+
+```css
+p {
+  font-size: 16px;
+}
+```
+
+Class Selectors (.)
+
+Menyeleksi elemen yang memiliki atribut class tertentu.
+
+```html
+<div class="my-class"></div>
+```
+
+```css
+.my-class {
+  color: red;
+}
+```
+
+ID vs class
+
+• Sifat Unik  
+　○ #id: Bersifat Unik. Satu nama id hanya boleh ada satu kali dalam satu halaman HTML.  
+　○ Class: Bersifat Reusable. Satu nama class boleh dipakai oleh banyak elemen sekaligus.
+
+• Jumlah Atribut  
+　○ #id: Satu elemen hanya boleh punya satu id.  
+　○ Class: Satu elemen boleh punya banyak class sekaligus (misal: `class="btn btn-primary btn-large"`).
+
+Grouping Selectors (,)
+
+Menggabungkan beberapa selector berbeda untuk diberi style yang sama
+
+```css
+p,
+.my-class,
+[lang] {
+  color: red;
+}
+```
+
+CSS, pilih seluruh elemen p, elemen punya class .my-class, dan elemen yang punya attribute lang
+
+Attribute Selectors ([])
+
+Menyeleksi elemen berdasarkan nilai dari atribut HTML tertentu
+
+```html
+<div data-type="primary"></div>
+```
+
+```css
+[data-type='primary'] {
+  color: red;
+}
+```
+
+CSS, pilih seluruh elemen yang memiliki atribut data-type bernilai ‘primary’
+
+Attribute Selectors ([])
+
+• `[attribute]` (Exist)  
+　○ Memilih elemen yang memiliki atribut tersebut, apapun nilainya.  
+　○ Contoh: `img[alt]` (Semua gambar yang punya alt text).
+
+• `[attribute="value"]` (Exact Match)  
+　○ Memilih elemen dengan nilai atribut yang sama persis.  
+　○ Contoh: `input[type="submit"]` (Hanya tombol submit).
+
+• `[attribute^="value"]` (Prefix / Awalan)  
+　○ Memilih elemen yang nilai atributnya diawali dengan kata tertentu.  
+　○ Contoh: `a[href^="https"]` (Hanya link aman/SSL).
+
+Attribute Selectors ([])
+
+• `[attribute$="value"]` (Suffix / Akhiran)  
+　○ Memilih elemen yang nilai atributnya diakhiri dengan kata tertentu.  
+　○ Contoh: `a[href$=".pdf"]` (Hanya link download file PDF).
+
+• `[attribute*="value"]` (Contains / Mengandung)  
+　○ Memilih elemen yang nilai atributnya mengandung kata tertentu.  
+　○ Contoh: `img[src*="logo"]` (Semua gambar yang nama filenya ada kata "logo").
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Simple Selectors</title>
+</head>
+
+<body>
+
+  <h1 id="heading">Belajar Simple Selectors</h1>
+
+  <h3>Judul Artikel 1</h3>
+  <p>Paragraf biasa tanpa class.</p>
+
+  <h3>Judul Artikel 2</h3>
+  <p class="highlight">Paragraf ini diberi tanda stabilo menggunakan Class .highlight</p>
+  <span class="highlight">Span ini juga pakai class .highlight</span>
+
+  <hr>
+
+  <form>
+    <label>Nama (Input Teks):</label>
+    <input type="text" name="nama" placeholder="Masukkan Nama">
+    <br><br>
+    <label>Password:</label>
+    <input type="password" name="password">
+  </form>
+
+  <br>
+
+  <p>
+    <i>Ini elemen miring</i> dan <span>ini elemen span</span>.
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, incidunt?
+  </p>
+
+  <a href="https://wpucourse.id">WPUCourse.id</a>
+
+</body>
+
+</html>
