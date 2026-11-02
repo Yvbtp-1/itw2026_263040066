@@ -1,0 +1,63 @@
+
+<!-- Text Effects
+- Text overflow: clip, ellipsis
+- Text shadow
+
+  Syntax: text-shadow: <x-offset> <y-offset> <blur-radius> <color>;
+  Example: text-shadow: 2px 2px 5px red;
+
+  x-offset menentukan jarak bayangan secara horizontal:
+  nilai positif menempatkan bayangan di kanan objek, sedangkan nilai negatif
+  menempatkannya di kiri objek.
+
+  y-offset menentukan jarak bayangan secara vertikal:
+  nilai positif menempatkan bayangan di bawah objek, sedangkan nilai negatif
+  menempatkannya di atas objek.
+
+  blur-radius menentukan tingkat blur bayangan. Semakin besar nilainya,
+  semakin blur bayangannya.
+
+  Mutiple Text-Shadow
+  .fire (
+  color: red;
+  text-shadow:
+    0 0 5px red,
+    0 0 10px red,
+    0 0 20px red,
+    0 0 40px red,
+    0 0 80px red; -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coba Text - Text Overflow & Teks Shadow </title>
+    </head>
+    <style>
+        p {
+            font-size: 26px;
+            white-space:  nowrap;
+            width: 300px;
+            background-color: lightblue;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        h1{
+            font-size: 100px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            text-shadow: 5px 10px 5px lightblue;
+            text-decoration: underline;
+            text-decoration-style: wavy;
+            text-decoration-skip-ink:none ;
+        }
+    </style>
+    <body>
+        <h1>Hello,CSS</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta modi rerum et dolore veniam quam doloremque temporibus nulla enim dolores nostrum inventore unde voluptates, sed natus numquam! Cumque tenetur voluptate consequuntur corrupti aliquid aliquam, expedita quis quos quas, nesciunt, necessitatibus atque error nisi provident dolores ipsa aperiam omnis repellat distinctio praesentium saepe veritatis nihil. Dolorem quibusdam veniam, molestiae, nisi neque velit laboriosam unde aliquid vitae delectus tempore cupiditate, obcaecati odio ut quasi? Expedita fuga optio excepturi aspernatur facere praesentium molestias veniam voluptas amet, rem dignissimos voluptate maxime alias minus tenetur harum inventore? Assumenda deleniti enim veniam magni repellendus nesciunt expedita.
+        </p>
+    </body>
+    </html>
