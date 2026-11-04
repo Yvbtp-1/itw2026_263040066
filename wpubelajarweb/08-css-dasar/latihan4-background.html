@@ -114,6 +114,18 @@
           rgb(22 32 51 / 72%);
         box-shadow: 0 20px 55px rgb(0 0 0 / 24%);
       }
+      .kartu,
+      .kartu p
+      .tokoh {
+        cursor: pointer;
+        transition: opacity 0.7s ease;
+        ;
+      }
+
+      main:has(.kartu:hover) .kartu:not(:hover) p,
+      main:has(.kartu:hover) .kartu:not(:hover) .tokoh {
+      opacity: 0.3;
+      }
 
       .kartu p {
         margin: 0;
