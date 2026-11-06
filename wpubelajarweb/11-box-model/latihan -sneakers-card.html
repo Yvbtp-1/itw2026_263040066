@@ -24,8 +24,29 @@
     .size input{
         position: absolute;
         width: 1px;
-        heig: 1px;
-        clipath: inset(50%);
+        height: 1px;
+        clip-path: inset(50%);
+    }
+
+    .size span {
+        display: block;
+        padding: 12px 0;
+        text-align: center;
+        border: 1px solid #cfd3cd;
+        border-radius: 8px;
+        background: white;
+        color: #181b19;
+    }
+
+    .size input:checked + span {
+        background: #181b19;
+        color: white;
+        border-color: #181b19;
+    }
+
+    .size input:focus-visible + span {
+        outline: 3px solid #284aab;
+        outline-offset: 2px;
     }
 </style>
 </head>
@@ -49,23 +70,23 @@
         <input type="radio" name="size" value="8"> <span>8</span>
          </label>
          <label class="size">
-        <input type="radio" name="size" value="8"> <span>9</span>
+        <input type="radio" name="size" value="9" checked> <span>9</span>
          </label>
          <label class="size">
-        <input type="radio" name="size" value="8"> <span>10</span>
+        <input type="radio" name="size" value="10"> <span>10</span>
          </label>
          <label class="size">
-        <input type="radio" name="size" value="8"> <span>11</span>
+        <input type="radio" name="size" value="11"> <span>11</span>
          </label>
          <label class="size">
-        <input type="radio" name="size" value="8"> <span>12</span>
+        <input type="radio" name="size" value="12"> <span>12</span>
          </label>
          </div>
 
-         
     </fieldset>
 </form>
  </article>
+ 
  </main>
 </body>
 </html>
