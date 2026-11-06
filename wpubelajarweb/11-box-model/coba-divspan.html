@@ -1,0 +1,43 @@
+<!--
+Block & Inline Elements\
+    Div Vs Span
+
+Perbedaan `<div>` dan `<span>` dalam HTML
+
+`<div>` dan `<span>` adalah pembungkus umum untuk mengelompokkan konten. Keduanya bisa diberi `class` agar tampilannya mudah diatur dengan CSS. Elemen seperti `<h1>` dan `<p>` punya makna khusus, yaitu judul utama dan paragraf.
+
+| Elemen | Tampilan bawaan | Contoh pada slide |
+|---|---|---|
+| `<div>` | `display: block`. Mulai di baris baru dan biasanya mengisi lebar yang tersedia. | `<div class="kotak">` membungkus judul artikel dan paragraf dalam satu kotak abu-abu. |
+| `<span>` | `display: inline`. Mengikuti alur teks dalam kalimat. | `<span class="highlight">style</span>` membungkus satu kata agar kata itu bisa diberi warna merah tanpa memulai baris baru. |
+
+Pada contoh tersebut, HTML menentukan bagian yang dibungkus. CSS pada `.kotak` dan `.highlight` mengatur latar abu-abu dan warna merah yang terlihat di browser.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coba div dan Span</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .kotak {
+            background-color: antiquewhite;
+            border: 2px solid lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Perbedaan Karbit dan My bini</h1>
+    <div class="Karbit">
+        <h2>Pengertian Karbit</h2>
+        <p>Dalam bahasa gaul, “karbit” itu singkatan dari “karbitan”. Sebutan ini dipakai untuk menyindir orang yang dianggap baru ikut tren, tapi sudah bertingkah seperti penggemar lama. Yang disindir adalah sikapnya. Orang yang baru mulai suka anime tetap wajar disebut penggemar baru..</p>
+    </div>
+    
+</body>
+</html>
