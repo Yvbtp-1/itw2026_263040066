@@ -12,6 +12,21 @@
     body {
         background: var(--paper);
     }
+
+    .size {
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 8px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .size input{
+        position: absolute;
+        width: 1px;
+        heig: 1px;
+        clipath: inset(50%);
+    }
 </style>
 </head>
 
@@ -29,10 +44,25 @@
 <form id="Product-Form">
     <fieldset class = "size-field">
         <legend>Pilih Ukuran (UK):</legend>
-        <div class="sizes"></div>
+        <div class="sizes">
          <label class="size">
         <input type="radio" name="size" value="8"> <span>8</span>
+         </label>
+         <label class="size">
+        <input type="radio" name="size" value="8"> <span>9</span>
+         </label>
+         <label class="size">
+        <input type="radio" name="size" value="8"> <span>10</span>
+         </label>
+         <label class="size">
+        <input type="radio" name="size" value="8"> <span>11</span>
+         </label>
+         <label class="size">
+        <input type="radio" name="size" value="8"> <span>12</span>
+         </label>
+         </div>
 
+         
     </fieldset>
 </form>
  </article>
