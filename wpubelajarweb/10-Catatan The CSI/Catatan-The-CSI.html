@@ -1,0 +1,122 @@
+<!--
+Catatan CSS: Cascade, Specificity, dan Inheritance
+
+1. Cascade
+
+Cascade adalah cara browser memilih nilai ketika beberapa aturan CSS mengatur properti yang sama pada elemen yang sama. Misalnya, satu aturan memberi judul warna merah dan aturan lain memberi judul itu warna biru. Browser menggunakan cascade untuk menentukan warna yang tampil.
+
+2. Position and order of appearance
+
+Jika dua aturan memiliki prioritas dan specificity yang sama, browser memakai deklarasi yang muncul terakhir.
+
+```css
+h1 { color: red; }
+h1 { color: blue; }
+```
+
+Teks “Hello World!” tampil biru karena kedua aturan memakai selector `h1`, dan `color: blue` muncul terakhir.
+
+3. Origin atau asal aturan
+
+Aturan CSS dapat berasal dari tiga sumber. User agent styles adalah gaya bawaan browser, misalnya jarak antarparagraf. User styles adalah gaya yang ditetapkan pengguna. Authored CSS adalah kode yang ditulis pembuat website.
+
+Di antara ketiga sumber itu, urutan prioritas dari rendah ke tinggi adalah:
+
+- Aturan biasa: browser → pengguna → pembuat website.
+- Aturan `!important`: pembuat website → pengguna → browser.
+
+4. Specificity dan contoh tombol merah
+
+Specificity adalah bobot selector. Pada contoh di slide, selector `button` memilih semua tombol, sedangkan `.tombol` memilih elemen dengan `class="tombol"`.
+
+```css
+.tombol {
+  background-color: blue;
+  background-color: red;
+}
+
+button {
+  background-color: pink;
+}
+```
+
+Tombol tampil merah karena dua hal. Pertama, `.tombol` lebih spesifik daripada `button`, sehingga aturan kelas menang meskipun `button` ditulis di bawahnya. Kedua, di dalam `.tombol`, warna merah muncul setelah biru.
+
+5. Importance atau penanda `!important`
+
+Jika aturan `button` pada contoh tadi diubah menjadi `background-color: pink !important`, tombol tampil merah muda. Browser mendahulukan deklarasi penting itu sebelum membandingkan bobot kedua selector.
+
+Pada contoh tombol radio, `width: 1000px !important` memperlebar kotak elemen. Di browser yang ditampilkan pada slide, lingkaran radionya tetap kecil. Lebar elemen dan ukuran lingkaran yang terlihat adalah dua hal berbeda.
+
+6. Inheritance atau pewarisan
+
+Inheritance terjadi ketika elemen anak mengikuti nilai properti dari elemen induknya. Misalnya, jika `body` memakai `color: blue`, paragraf di dalamnya ikut berwarna biru selama paragraf itu tidak memiliki aturan warna sendiri. Properti seperti `color` dapat diwariskan, sedangkan `margin` tidak diwariskan secara otomatis.
+
+
+
+Specifity
+
+1. Pengertian specificity
+
+Specificity adalah bobot sebuah selector CSS. Ketika dua aturan dengan prioritas yang sama mengatur properti yang sama pada satu elemen, browser memilih selector dengan bobot lebih tinggi.
+
+Selector `a` memilih semua elemen `<a>`. Selector `a.class-1.class-2[href]:hover` lebih spesifik. Selector ini hanya cocok saat elemen `<a>` memiliki kedua class tersebut, memiliki atribut `href`, dan sedang ditunjuk kursor.
+
+2. Mengapa tombol berwarna merah?
+
+Pada `<button class="tombol">`, selector `button` dan `.tombol` sama-sama cocok. Ada dua hal yang menentukan hasilnya.
+
+- `.tombol` lebih spesifik daripada `button`. Karena itu, aturan kelas menang atas aturan `button` yang memberi warna `orange` atau `pink`.
+- Di dalam `.tombol`, properti `background-color` ditulis dua kali. Karena bobotnya sama, deklarasi terakhir yang berlaku. Urutannya `blue` lalu `red`, jadi tombol tampil merah.
+
+3. Cara membaca bobot specificity
+
+Slide memakai angka berikut untuk memudahkan kamu mengingat urutannya.
+
+- `1000` untuk inline style, yaitu CSS pada atribut `style` di HTML.
+- `100` untuk selector ID, misalnya `#judul`.
+- `10` untuk class, atribut, dan pseudo-class, misalnya `.tombol`, `[href]`, dan `:hover`.
+- `1` untuk elemen dan pseudo-element, misalnya `h1` dan `::before`.
+- `0` untuk selector universal `*` dan penghubung seperti `>` atau `+`.
+
+Browser membandingkan bobot selector per kelompok, mulai dari ID, lalu kelompok class, lalu elemen. Jadi, satu ID tetap lebih kuat daripada sepuluh class. Pada contoh `a.class-1.class-2[href]:hover`, bobotnya `(0, 4, 1)`, yaitu nol ID, empat bagian dalam kelompok class, dan satu elemen `a`.
+
+Penanda `!important` mengatur prioritas deklarasi secara terpisah dari specificity. Pada contoh tombol tadi, jika aturan `button` memakai `background-color: pink !important`, warna pink menang atas warna merah biasa.
+
+
+Inheritance
+1. Inheritance atau pewarisan
+
+Inheritance adalah cara elemen anak mengikuti nilai properti CSS dari elemen induknya. Pada contoh `body { color: green; }`, judul `<h1>` mendapat warna hijau langsung dari `<body>`. Paragraf `<p>` juga berwarna hijau, tetapi melalui `<div>` yang membungkusnya. Urutannya adalah `body → div → p`.
+
+2. Properti yang diwariskan secara otomatis
+
+| Properti | Kegunaan |
+|---|---|
+| `color` | Warna teks |
+| `font` | Pengaturan huruf, seperti jenis dan ukuran |
+| `letter-spacing` | Jarak antarhuruf |
+| `line-height` | Tinggi setiap baris teks |
+| `list-style` | Bentuk penanda daftar |
+| `text-align` | Perataan teks |
+| `text-indent` | Jarak masuk baris pertama |
+| `text-transform` | Tampilan huruf besar atau kecil |
+| `visibility` | Apakah elemen terlihat atau tersembunyi |
+| `white-space` | Cara browser menangani spasi dan perpindahan baris |
+
+3. Origin atau asal aturan CSS
+
+Browser memiliki gaya bawaan (*user agent styles*), misalnya judul tampil tebal dan tautan biasanya bergaris bawah. Pengguna juga dapat menentukan gaya sendiri (*user styles*). CSS yang kamu tulis sebagai pembuat halaman disebut *authored CSS*. Jika kamu menambahkan `!important`, asal aturannya tetap sama, tetapi prioritas deklarasinya meningkat.
+
+4. Hasil contoh “Tebak Warna”
+
+Ketiga teks tampil hijau dan berukuran 20 piksel. Kata kunci `inherit` berarti “ambil nilai properti ini dari induk langsung”.
+
+- **“Hello WPU!”** mengikuti ukuran `<body>` karena `h1 { font-size: inherit; }`. Judul tetap tebal karena aturan itu hanya mengatur ukuran.
+- **“ini paragraf”** mewarisi warna hijau dan ukuran 20 piksel melalui `<div>`.
+- **“ini tombol”** adalah tautan `<a>`. Aturan `a { color: inherit; }` membuat warnanya mengikuti `<div>`. Garis bawah bawaan tautan tetap terlihat.
+
+
+
+
+-->
