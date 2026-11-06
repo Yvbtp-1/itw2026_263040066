@@ -13,6 +13,46 @@ Perbedaan `<div>` dan `<span>` dalam HTML
 
 Pada contoh tersebut, HTML menentukan bagian yang dibungkus. CSS pada `.kotak` dan `.highlight` mengatur latar abu-abu dan warna merah yang terlihat di browser.
 
+
+
+
+Display 
+Catatan CSS: Display, Overflow, dan Ukuran Elemen
+
+1. Display
+
+Properti `display` mengatur bagaimana elemen menempati ruang pada halaman. Perbedaannya paling mudah dilihat dari posisi elemen dan apakah kamu bisa mengatur ukurannya.
+
+| Nilai | Perilaku | Contoh pada halaman |
+|---|---|---|
+| `block` | Mulai di baris baru dan biasanya memenuhi lebar yang tersedia pada elemen induk. Kamu bisa mengatur `width` dan `height`. | Judul `<h1>`, daftar `<ul>`, dan paragraf `<p>` tersusun dari atas ke bawah. |
+| `inline` | Mengikuti alur teks. Pada elemen teks seperti `<a>` atau `<span>`, latarnya mengikuti isi meskipun kamu menulis `width` dan `height`. | Tautan Home, About, Contact, dan Services berjajar. Latar biru hanya menutupi teks setiap tautan. |
+| `inline-block` | Bisa berjajar seperti `inline`, tetapi lebar dan tingginya bisa kamu atur. | Setelah tautan memakai `display: inline-block`, masing-masing tampil sebagai kotak biru berukuran `100px × 100px`. |
+| `none` | Menyembunyikan elemen beserta isinya dan membebaskan ruang yang sebelumnya ditempati. | Jika tautan About disembunyikan, Contact bergeser mengisi ruangnya. |
+
+2. Overflow
+
+`overflow` mengatur apa yang terjadi saat isi melebihi ukuran kotaknya. Pada slide, paragraf memiliki kotak biru berukuran `200px × 200px`. Teksnya lebih panjang daripada tinggi kotak, sehingga beberapa baris melampaui batas bawah.
+
+| Nilai | Hasil |
+|---|---|
+| `visible` | Nilai bawaan. Teks yang melampaui batas tetap terlihat di luar kotak. |
+| `auto` | Kamu bisa menggulir isi ketika ruangnya kurang. |
+| `hidden` | Kotak menyembunyikan bagian teks yang melewati batasnya. |
+| `scroll` | Kotak menyediakan area gulir meskipun seluruh isi masih muat. |
+
+3. Intrinsic size
+
+Ukuran intrinsik mengikuti kebutuhan konten. Contohnya, tombol bertuliskan “Simpan perubahan” bisa lebih lebar daripada tombol “OK” karena teksnya lebih panjang.
+
+Untuk teks biasa, `max-content` memberi ruang agar teks tetap satu baris. `min-content` membiarkan teks turun baris sehingga lebarnya biasanya mengikuti kata terpanjang. Sementara itu, `auto` mengikuti aturan tata letak. Pada elemen `block`, `width: auto` biasanya mengisi lebar yang tersedia.
+
+4. Extrinsic size
+
+Ukuran ekstrinsik mengikuti ukuran yang kamu tetapkan atau ruang yang tersedia dari luar elemen. Contohnya, `width: 200px` menetapkan lebar 200 piksel, `width: 30%` mengikuti 30 persen lebar wadah, dan `width: 80vw` mengikuti 80 persen lebar area tampilan browser.
+
+Pada contoh paragraf tadi, `height: 200px` menentukan tinggi kotaknya. Jika teks bertambah panjang, `overflow` menentukan bagaimana kamu melihat sisanya.
+
 -->
 
 <!DOCTYPE html>
@@ -35,6 +75,8 @@ Pada contoh tersebut, HTML menentukan bagian yang dibungkus. CSS pada `.kotak` d
 
         .higlight {
             background-color: red;
+            font-weight: bold;
+            text-transform: uppercase;
         }
     </style>
 </head>
