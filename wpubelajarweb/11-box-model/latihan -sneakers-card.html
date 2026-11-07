@@ -48,11 +48,27 @@
         outline: 3px solid #284aab;
         outline-offset: 2px;
     }
+    .add-button {
+        color: white;
+        background: #111;
+        width: 100%;
+        margin-top: 16px;
+        border: 0;
+        border-radius: 8px;
+        font: inherit;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .add-button:hover {
+        background-color: #333;
+    }
 </style>
 </head>
 
 <body>
-    <main>
+        <main>
         <article class="product-card">
         <p class="brand">ADIDAS ORIGINALS</p>
     <h1>Samba OG Green</h1>
@@ -82,11 +98,28 @@
         <input type="radio" name="size" value="12"> <span>12</span>
          </label>
          </div>
-
+         <button type="submit" class="add-button">TAMBAHKAN KE KERANJANG</button>
+         <p id="cart-message" role="status"></p>
     </fieldset>
 </form>
  </article>
  
  </main>
+<script>
+    const productForm = document.getElementById("Product-Form");
+    const cartMessage = document.getElementById("cart-message");
+
+    productForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(productForm);
+        const selectedSize = formData.get("size");
+
+        cartMessage.textContent =
+            "Kamu telah memilih Samba OG Green ukuran UK " + selectedSize + ".";
+    });
+
+</script>
+ 
 </body>
 </html>
