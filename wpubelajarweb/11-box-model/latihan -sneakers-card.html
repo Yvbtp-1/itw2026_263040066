@@ -173,6 +173,19 @@
             height: 220px;
         }
     }
+
+    .clear-button {
+        padding: 10px 14px;
+        border: 1px solid #cfd3cd;
+        border-radius: 8px;
+        background: white;
+        font: inherit;
+        cursor: pointer;
+    }
+
+    .clear-button:hover {
+        background: #f0f0ec;
+    }
 </style>
 </head>
 
@@ -180,7 +193,7 @@
         <main>
         <article class="product-card">
             <img class="product-image" src="sepatu-02-depan-serong.png" alt="Sepasang Adidas Samba putih dengan tiga garis">
-            <p class="brand">ADIDAS ORIGINALS</p>
+            <p class="brand">___ADIDAS ORIGINALS</p>
     <h1>Samba OG Green</h1>
 <p class="description">Kulit premium dan suede lembut berpadu dengan 3-Stripes hijau khas Samba. Siluet klasik dengan sol karet yang nyaman dipakai sehari-hari.</p>
 <div class="price">
@@ -211,6 +224,7 @@
          <button type="submit" class="add-button">TAMBAHKAN KE KERANJANG</button>
          <p id="cart-message" role="status"></p>
          <ul id="cart-list"></ul>
+         <button type="button"id="clear-cart" class="clear-button">Kosongkan Keranjang</button>
          <p>Isi keranjang: <strong id="cart-count">0</strong> pasang</p>
          <p>Subtotal: <strong id="cart-total">Rp 0</strong></p>
     </fieldset>
@@ -246,7 +260,15 @@
       "Samba OG Green ukuran UK " + selectedSize +
       " berhasil ditambahkan.";
   });
-
+  const clearCartButton = document.getElementById("clear-cart")
+  clearCartButton.addEventListener("click",function() {
+    cart.length = 0
+    cartList.replaceChildren();
+    cartCount.textContent = '0'
+    cartTotal.textContent = '0'
+    cartMessage.textContent = 'Keranjang Sudah Dikosongkan'
+  });
+  
 </script>
 
 </body>
