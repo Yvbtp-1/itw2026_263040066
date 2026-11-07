@@ -210,17 +210,19 @@
          </div>
          <button type="submit" class="add-button">TAMBAHKAN KE KERANJANG</button>
          <p id="cart-message" role="status"></p>
-         <p>isi keranjang
-            <strong id="cart-count">0</strong> pasang </p>
+         <p>Isi keranjang: <strong id="cart-count">0</strong> pasang</p>
+         <p>Subtotal: <strong id="cart-total">Rp 0</strong></p>
     </fieldset>
 </form>
  </article>
  
  </main>
 <script>
+  const productPrice = 2200000;
   const productForm = document.getElementById("Product-Form");
   const cartMessage = document.getElementById("cart-message");
   const cartCount = document.getElementById("cart-count");
+  const cartTotal = document.getElementById("cart-total");
 
   const cart = [];
 
@@ -232,11 +234,13 @@
 
     cart.push(selectedSize);
     cartCount.textContent = cart.length;
-
+    const totalPrice = cart.length * productPrice;
+    cartTotal.textContent = "Rp " + totalPrice.toLocaleString("id-ID");
     cartMessage.textContent =
       "Samba OG Green ukuran UK " + selectedSize +
       " berhasil ditambahkan.";
   });
 </script>
+
 </body>
 </html>
