@@ -186,11 +186,27 @@
     .clear-button:hover {
         background: #f0f0ec;
     }
+    .store-header {
+        margin-bottom: 16px;
+    }
+
+    .store-name{
+        margin: 0;
+        color: #214f39;
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: -1px;
+
+    }
 </style>
 </head>
 
 <body>
         <main>
+        <header class="store-header">
+            <p class="store-name">WPU</p>
+        </header>
+
         <article class="product-card">
             <img class="product-image" src="sepatu-02-depan-serong.png" alt="Sepasang Adidas Samba putih dengan tiga garis">
             <p class="brand">___ADIDAS ORIGINALS</p>
@@ -268,7 +284,7 @@
     cartTotal.textContent = '0'
     cartMessage.textContent = 'Keranjang Sudah Dikosongkan'
   });
-  
+
 </script>
 
 </body>
