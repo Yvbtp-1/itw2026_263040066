@@ -23,6 +23,8 @@
         align-items: center;
     }
 
+    
+
     .size {
         display: grid;
         grid-template-columns: repeat(5,1fr);
@@ -92,12 +94,12 @@
         width: 100%;
         height: 300px;
         object-fit: cover;
-        object-position: center 60%;
+        object-position: center 40%;
         border-radius: 12px;
         margin-bottom: 20px;
     }
 
-    brand {
+    .brand {
         margin: 0 0 0px;
         color : #284aab;
         font-size: 12px;
@@ -132,32 +134,53 @@
     }
 
     .price s {
-        color:#5c6355
-        font-size: 14px
+        color:#5c6355;
+        font-size: 14px;
     }
     
     .size-field {
         margin:0%;
         padding: 0%;
-        border: 0%;
+        border: 0;
         min-width: 0%;
         }
 
     .size-field legend {
         padding: 0%;
-        font-weight: bold
+        font-weight: bold;
         font-size: 14px;
-    margin-bottom: 12px;
+        margin-bottom: 12px;
     }
     
+    * {
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 480px) {
+        body {
+            padding: 16px;
+        }
+
+        .product-card {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        .product-image {
+            height: 220px;
+        }
+    }
 </style>
 </head>
 
 <body>
         <main>
         <article class="product-card">
-        <p class="brand">ADIDAS ORIGINALS</p>
-        <img class="product-image" src="sepatu-02-depan-serong.png" alt="Sepasang Adidas Samba putih dengan tiga garis">
+            <img class="product-image" src="sepatu-02-depan-serong.png" alt="Sepasang Adidas Samba putih dengan tiga garis">
+            <p class="brand">ADIDAS ORIGINALS</p>
     <h1>Samba OG Green</h1>
 <p class="description">Kulit premium dan suede lembut berpadu dengan 3-Stripes hijau khas Samba. Siluet klasik dengan sol karet yang nyaman dipakai sehari-hari.</p>
 <div class="price">
@@ -187,26 +210,33 @@
          </div>
          <button type="submit" class="add-button">TAMBAHKAN KE KERANJANG</button>
          <p id="cart-message" role="status"></p>
+         <p>isi keranjang
+            <strong id="cart-count">0</strong> pasang </p>
     </fieldset>
 </form>
  </article>
  
  </main>
 <script>
-    const productForm = document.getElementById("Product-Form");
-    const cartMessage = document.getElementById("cart-message");
+  const productForm = document.getElementById("Product-Form");
+  const cartMessage = document.getElementById("cart-message");
+  const cartCount = document.getElementById("cart-count");
 
-    productForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+  const cart = [];
 
-        const formData = new FormData(productForm);
-        const selectedSize = formData.get("size");
+  productForm.addEventListener("submit", function(event) {
+    event.preventDefault();
 
-        cartMessage.textContent =
-            "Kamu telah memilih Samba OG Green ukuran UK " + selectedSize + ".";
-    });
+    const formData = new FormData(productForm);
+    const selectedSize = formData.get("size");
 
+    cart.push(selectedSize);
+    cartCount.textContent = cart.length;
+
+    cartMessage.textContent =
+      "Samba OG Green ukuran UK " + selectedSize +
+      " berhasil ditambahkan.";
+  });
 </script>
- 
 </body>
 </html>
